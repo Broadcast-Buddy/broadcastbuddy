@@ -1,4 +1,4 @@
-# BroadcastBuddy API Wrapper
+# BroadcastBuddy API Wrapper for PHP
 
 This is a PHP wrapper for the BroadcastBuddy API, which allows developers to easily integrate multi-channel messaging functionality into their applications. With BroadcastBuddy, you can send messages via WhatsApp and SMS to engage with your customer/user base effortlessly.
 
@@ -14,8 +14,10 @@ To get started with the BroadcastBuddy API Wrapper, follow these steps:
     <?php
     require_once('BroadcastBuddy.php');
 
-    $apiKey = 'YOUR_API_KEY';
-    $broadcastBuddy = new BroadcastBuddy($apiKey);
+    $WAapiKey = 'YOUR_WHATSAPP_API_KEY';
+    $SMSapiKey = 'YOUR_WHATSAPP_API_KEY';
+    $broadcastWhatsApp = new BroadcastBuddy($WAapiKey);
+    $broadcastSMS = new BroadcastBuddy($SMSapiKey);
     ```
 
 3. **Usage**: You can now use the wrapper to send messages via WhatsApp or SMS.
@@ -26,7 +28,7 @@ To get started with the BroadcastBuddy API Wrapper, follow these steps:
 
 ```php
 // Initialize WhatsApp instance
-$whatsapp = $broadcastBuddy->whatsapp();
+$whatsapp = $broadcastWhatsApp->whatsapp();
 
 // Get WhatsApp settings
 $settings = $whatsapp->getInstance();
@@ -34,7 +36,7 @@ $settings = $whatsapp->getInstance();
 // Send a text message
 $contact = 'PHONE_NUMBER';
 $message = 'Hello, this is a test message.';
-$contactType = 'individual';
+$contactType = 'user';
 $response = $whatsapp->sendMessage($contact, $message, $contactType);
 
 // Send media (e.g., image)
@@ -47,10 +49,10 @@ $response = $whatsapp->sendMedia($contact, $media, $caption, $contactType);
 
 ```php
 // Initialize SMS instance
-$sms = $broadcastBuddy->sms();
+$sms = $broadcastSMS->sms();
 
 // Compose and send SMS
-$recipients = ['PHONE_NUMBER1', 'PHONE_NUMBER2'];
+$recipients = 'PHONE_NUMBER1,PHONE_NUMBER2';
 $sender = 'SENDER_ID';
 $message = 'Hello, this is a test SMS.';
 $response = $sms->compose($recipients, $sender, $message);
@@ -58,7 +60,7 @@ $response = $sms->compose($recipients, $sender, $message);
 
 ## Documentation
 
-For more information on available methods and parameters, refer to the [BroadcastBuddy API documentation](https://broadcastbuddy.app/docs).
+For more information on available methods and parameters, refer to the [BroadcastBuddy API documentation](https://api.broadcastbuddy.app/v1).
 
 ## Support
 
