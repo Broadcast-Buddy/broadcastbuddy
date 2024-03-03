@@ -15,7 +15,7 @@ To get started with the BroadcastBuddy API Wrapper, follow these steps:
     require_once('BroadcastBuddy.php');
 
     $WAapiKey = 'YOUR_WHATSAPP_API_KEY';
-    $SMSapiKey = 'YOUR_WHATSAPP_API_KEY';
+    $SMSapiKey = 'YOUR_SMS_API_KEY';
     $broadcastWhatsApp = new BroadcastBuddy($WAapiKey);
     $broadcastSMS = new BroadcastBuddy($SMSapiKey);
     ```
