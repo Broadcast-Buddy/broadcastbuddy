@@ -42,8 +42,8 @@ $whatsapp = new BroadcastBuddyWhatsApp($apiKey);
 
 #### WhatsApp Integration
 ```php
-// Start a WhatsApp session
-$response = $whatsapp->startSession();
+// Checks WhatsApp session status
+$response = $whatsapp->sessionStatus();
 print_r($response);
 
 // Send a WhatsApp message
