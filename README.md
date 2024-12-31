@@ -68,13 +68,13 @@ print_r($response);
 ```php
 $account = new BroadcastBuddyAccount($apiKey);
 
-// Fetch account details
-$response = $account->getUserDetails();
-print_r($response);
-
-// Update account details
-$data = ['name' => 'New Name', 'email' => 'new@example.com'];
-$response = $account->updateAccount($data);
+// Add contact to subscription
+$first_name = 'Jane';
+$last_name = 'Doe';
+$email = 'jane@example.com';
+$birthday = '1998/04/22';
+$contact = '233558382705';
+$response = $account->updateAccount($first_name,$last_name,$email,$birthday,$contact);
 print_r($response);
 ```
 
@@ -105,8 +105,7 @@ print_r($response);
 $notification = new BroadcastBuddyNotification($apiKey);
 
 // Send a push notification
-$data = ['title' => 'Alert', 'message' => 'This is a test notification'];
-$response = $notification->sendPushNotification($data);
+$response = $notification->sendPushNotification('example.com','Alert','https://example.com/favicon.ico','https://example.com/callback','This is a test notification');
 print_r($response);
 ```
 
@@ -115,11 +114,12 @@ print_r($response);
 $ultimate = new BroadcastBuddyUltimate($apiKey);
 
 // Broadcast a message across multiple channels
+$message = 'Hello';
 $channels = [
-    ['gateway' => 'sms', 'recipient' => '1234567890', 'message' => 'Hello via SMS'],
-    ['gateway' => 'email', 'recipient' => 'recipient@example.com', 'subject' => 'Test Email', 'message' => 'Hello via Email']
+    ['gateway' => 'sms', 'recipient' => '1234567890'],
+    ['gateway' => 'email', 'recipient' => 'recipient@example.com', 'subject' => 'Test Email']
 ];
-$response = $ultimate->sendBroadcast($channels);
+$response = $ultimate->sendBroadcast($channels, $message);
 print_r($response);
 ```
 

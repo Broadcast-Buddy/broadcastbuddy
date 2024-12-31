@@ -16,7 +16,7 @@ class BaseBroadcastBuddy
         $ch = curl_init();
 
         $headers = [
-            'Authorization: Bearer ' . $this->apiKey,
+            'X-Authorization: ' . $this->apiKey,
             'Content-Type: application/json',
         ];
 
@@ -32,6 +32,6 @@ class BaseBroadcastBuddy
         $response = curl_exec($ch);
         curl_close($ch);
 
-        return json_decode($response, true);
+        return  json_decode($response, false);
     }
 }
