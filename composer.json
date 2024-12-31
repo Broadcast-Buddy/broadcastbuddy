@@ -1,0 +1,11 @@
+{
+    "name": "Broadcast Buddy",
+    "description": "A project for broadcasting and notifications",
+    "type": "project",
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
