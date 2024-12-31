@@ -74,7 +74,7 @@ $last_name = 'Doe';
 $email = 'jane@example.com';
 $birthday = '1998/04/22';
 $contact = '233558382705';
-$response = $account->updateAccount($first_name,$last_name,$email,$birthday,$contact);
+$response = $account->addContact($first_name,$last_name,$email,$birthday,$contact);
 print_r($response);
 ```
 
