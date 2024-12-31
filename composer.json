@@ -1,5 +1,5 @@
 {
-    "name": "Broadcast-Buddy",
+    "name": "broadcastbuddy-php-sdk",
     "description": "A project for broadcasting and notifications",
     "type": "project",
     "config": {
