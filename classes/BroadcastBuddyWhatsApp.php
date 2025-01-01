@@ -30,7 +30,7 @@ class BroadcastBuddyWhatsApp extends BaseBroadcastBuddy
     }
 
 
-    public function sendButtons($recipient, $message, $title, $footer, $buttons)
+    /*public function sendButtons($recipient, $message, $title, $footer, $buttons)
     {
         $data = [
             'receiver_type' => 'user',
@@ -41,9 +41,9 @@ class BroadcastBuddyWhatsApp extends BaseBroadcastBuddy
             'buttons' => $buttons,
         ];
         return $this->makeRequest('whatsapp/compose/buttons', 'POST', $data);
-    }
+    }*/
 
-    public function sendList($recipient, $message, $button_text, $title, $footer, $sections)
+    /*public function sendList($recipient, $message, $button_text, $title, $footer, $sections)
     {
         $data = [
             'receiver_type' => 'user',
@@ -55,7 +55,7 @@ class BroadcastBuddyWhatsApp extends BaseBroadcastBuddy
             'sections' => $sections,
         ];
         return $this->makeRequest('whatsapp/compose/list', 'POST', $data);
-    }
+    }*/
 
     /**
      * Sends media to a WhatsApp contact
